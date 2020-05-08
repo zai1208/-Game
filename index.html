@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game</title>
+</head>
+<body onKeyPress="check(event)">
+<style>
+canvas {
+border : 1px solid black;
+}
+button {
+padding: 50 px;
+}
+.button1 {
+background-color: #ff0000;
+}
+.button2 {
+background-color: #00ff00;
+}
+</style>
+<canvas width="200" height="200" id="gsc"></canvas>
+<br>
+<br>
+<button onclick="stop()" class="button button1">Stop</button>
+<button onclick="start()"class="button button2">Start</button>
+ 
+<script>
+let canvas = document.getElementById("gsc");
+let ctx = canvas.getContext('2d');
+this.position = {x: 0, y: 0};
+this.position2 = {x: 190, y: 0};
+let state = "start";
+function stop() {
+state = "stop";
+}
+  function check(event) {
+  if (event.key == "g"){
+ start(); 
+  }
+    elif (event.key == "s") {
+    stop();
+    }
+  }
+function start() {
+state = "start";
+}
+function gameLoop() {
+ctx.clearRect(0, 0, 200, 200);
+ctx.fillRect(this.position.x, this.position.y, 10, 10);
+
+ctx.fillRect(this.position2.x, this.position2.y, 10, 10);
+
+if (state == "stop") {
+
+this.position.x += 0;
+this.position.y += 0;
+
+this.position2.x += 0;
+this.position2.y += 0;
+
+}
+if (state == "start") {
+
+if (this.position.x !== 200 || this.position2.x !== 0){
+
+this.position.x += 1;
+
+this.position2.x -= 1;
+
+}
+
+if (this.position.y !== 190 || this.position2.y !== 190)
+{
+
+this.position.y += 1
+this.position2.y += 1;
+
+}
+
+if (this.position.x == 200 || this.position2.x == 0) {
+this.position.x = 0;
+this.position2.x = 190;
+}
+if (this.position.y == 190 || this.position2.y == 190) {
+this.position.y = 0;
+this.position2.y = 0;
+}
+
+}
+requestAnimationFrame(gameLoop);
+
+}
+gameLoop();
+requestAnimationFrame(gameLoop);
+</script>
+
+<script id="jsbin-source-html" type="text/html"><!DOCTYPE html>
+<html>
+<head>
+  <title>Game</title>
+</head>
+<body>
+<style>
+canvas {
+border : 1px solid black;
+}
+button {
+padding: 50 px;
+}
+.button1 {
+background-color: #ff0000;
+}
+.button2 {
+background-color: #00ff00;
+}
+</style>
+<canvas width="200" height="200" id="gsc"></canvas>
+<br>
+<br>
+<button onclick="stop()" class="button button1">Stop</button>
+<button onclick="start()"class="button button2">Start</button>
+<script>
+let canvas = document.getElementById("gsc");
+let ctx = canvas.getContext('2d');
+this.position = {x: 0, y: 0};
+this.position2 = {x: 190, y: 0};
+let state = "start";
+function stop() {
+state = "stop";
+}
+function start() {
+state = "start";
+}
+function gameLoop() {
+ctx.clearRect(0, 0, 200, 200);
+ctx.fillRect(this.position.x, this.position.y, 10, 10);
+
+ctx.fillRect(this.position2.x, this.position2.y, 10, 10);
+
+if (state == "stop") {
+
+this.position.x += 0;
+this.position.y += 0;
+
+this.position2.x += 0;
+this.position2.y += 0;
+
+}
+if (state == "start") {
+
+if (this.position.x !== 200 || this.position2.x !== 0){
+
+this.position.x += 1;
+
+this.position2.x -= 1;
+
+}
+
+if (this.position.y !== 190 || this.position2.y !== 190)
+{
+
+this.position.y += 1
+this.position2.y += 1;
+
+}
+
+if (this.position.x == 200 || this.position2.x == 0) {
+this.position.x = 0;
+this.position2.x = 190;
+}
+if (this.position.y == 190 || this.position2.y == 190) {
+this.position.y = 0;
+this.position2.y = 0;
+}
+
+}
+requestAnimationFrame(gameLoop);
+
+}
+gameLoop();
+requestAnimationFrame(gameLoop);
+<\/script>
+</body>
+</html> </script>
+
+</body>
+</html>
