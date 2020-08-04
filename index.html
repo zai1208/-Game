@@ -21,8 +21,6 @@ background-color: #00ff00;
 <canvas width="200" height="200" id="gsc"></canvas>
 <br>
 <br>
-<button onclick="stop()" class="button button1">Stop</button>
-<button onclick="start()"class="button button2">Start</button>
  
 <script>
 let canvas = document.getElementById("gsc");
@@ -94,45 +92,6 @@ requestAnimationFrame(gameLoop);
 gameLoop();
 requestAnimationFrame(gameLoop);
 </script>
-
-<script id="jsbin-source-html" type="text/html"><!DOCTYPE html>
-<html>
-<head>
-  <title>Game</title>
-</head>
-<body>
-<style>
-canvas {
-border : 1px solid black;
-}
-button {
-padding: 50 px;
-}
-.button1 {
-background-color: #ff0000;
-}
-.button2 {
-background-color: #00ff00;
-}
-</style>
-<canvas width="200" height="200" id="gsc"></canvas>
-<br>
-<br>
 <button onclick="stop()" class="button button1">Stop</button>
 <button onclick="start()"class="button button2">Start</button>
-<script>
-let canvas = document.getElementById("gsc");
-let ctx = canvas.getContext('2d');
-this.position = {x: 0, y: 0};
-this.position2 = {x: 190, y: 0};
-let state = "start";
-function stop() {
-state = "stop";
-}
-function start() {
-state = "start";
-}
-function gameLoop() {
-ctx.clearRect(0, 0, 200, 200);
-<\script>
 <\body>
